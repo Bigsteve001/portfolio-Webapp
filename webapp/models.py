@@ -73,7 +73,7 @@ class team_members(models.Model):
     name = models.CharField(max_length=50, null=True)
     job = models.CharField(max_length=50, null=True)
     members_image = models.ImageField(upload_to = 'members/')
-    members_link = models.URLField(blank=False)
+    members_link = models.URLField(blank=True)
 
     def __str__(self):
       return str(self.id)
@@ -88,6 +88,21 @@ class contact(models.Model):
 
     def __str__(self):
       return  self.header
+
+
+class experience(models.Model):
+    Role = models.CharField(max_length=100)
+    From=models.DateField(blank=False)
+    To=models.DateField(blank=False)
+    company=models.CharField(max_length=100)
+
+
+class education(models.Model):
+    course= models.CharField(max_length=100)
+    From=models.DateField(blank=False)
+    To=models.DateField(blank=False)
+    school=models.CharField(max_length=100)
+
 
 
 

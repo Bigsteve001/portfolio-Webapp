@@ -10,7 +10,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-        <link href="{%static 'img/favicon.ico'}" rel="icon">
+    <link href="{%static 'img/favicon.ico'%}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -170,10 +170,12 @@
                     <h1 class="display-5 mb-5">Skills & Experience</h1>
                     <p class="mb-4">{{skill.skill_description}}</p>
                     <h3 class="mb-4">My Skills</h3>
+                    
                     <div class="row align-items-center">
+                        {%for skill in skill%}
                         <div class="col-md-6">
                             <div class="skill mb-4">
-                                {%for skill in skill%}
+                    
                                 <div class="d-flex justify-content-between">
                                     <h6 class="font-weight-bold">{{skill.skill_name}}</h6>
                                     <h6 class="font-weight-bold">{{skill.score}}</h6>
@@ -182,10 +184,8 @@
                                     <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="{{skill.score}}" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
-                            {%endfor%}
-                            
-                            </div>
                         </div>
+                        {%endfor%}
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -201,7 +201,7 @@
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row gy-5 gx-4">
                                 <div class="col-sm-6">
-                                    <h5>UI Designer</h5>
+                                    <h5>{{}}</h5>
                                     <hr class="text-primary my-2">
                                     <p class="text-primary mb-1">2000 - 2045</p>
                                     <h6 class="mb-0">Apex Software Inc</h6>
@@ -347,7 +347,7 @@
             <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-4 col-md-6 portfolio-item first">
                     <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="{{projects.image.url}}" alt="">
+                        <img class="img-fluid width=25%" src="{{projects.image.url}}" alt="">
                         <div class="portfolio-btn">
                             <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="{{projects.link}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>

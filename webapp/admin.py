@@ -11,4 +11,6 @@ admin.site.register(services)
 admin.site.register(projects)
 admin.site.register(team_members)
 admin.site.register(contact)
+admin.site.register(experience)
+admin.site.register(education)
 

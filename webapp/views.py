@@ -15,7 +15,8 @@ def index(request):
     Project = projects.objects.all()
     Member = team_members.objects.all()
     Contacts= contact.objects.latest('updated')
-    
+    Experience=experience.objects.all()
+    Education = education.objects.all()
     context = (
        {'home' : home,
        'about' : about,
@@ -23,7 +24,10 @@ def index(request):
        'service' : Service,
        'projects': Project,
        'contact': Contacts,
-       'members': Member}
+       'members': Member,
+       'Experience':Experience,
+       'Education':Education,
+       }
 
     )
    
