@@ -11,7 +11,7 @@ from django.db import models
 class Home(models.Model):
    name = models.CharField(max_length=100)
    picture = models.ImageField(upload_to='picture/')
-   careers =  models.CharField(max_length=100, null=True)
+   Top_3_skills =  models.CharField(max_length=100, null=True)
    updated = models.DateTimeField(auto_now=True)
 
    def __str__(self):
@@ -63,7 +63,7 @@ class services(models.Model):
 
 class projects(models.Model):
     image = models.ImageField(upload_to = 'projects/')
-    link = models.URLField(blank=False)
+    link = models.URLField(blank=True)
     
     def __str__(self):
       return str(self.id)
@@ -94,7 +94,9 @@ class experience(models.Model):
     Role = models.CharField(max_length=100)
     From=models.DateField(blank=False)
     To=models.DateField(blank=False)
-    company=models.CharField(max_length=100)
+    company=models.CharField(max_length=50)
+    def __str__(self):
+      return self.Role 
 
 
 class education(models.Model):
@@ -102,7 +104,8 @@ class education(models.Model):
     From=models.DateField(blank=False)
     To=models.DateField(blank=False)
     school=models.CharField(max_length=100)
-
+    def __str__(self):
+      return  self.course 
 
 
 

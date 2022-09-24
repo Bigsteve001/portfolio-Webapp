@@ -17,19 +17,18 @@ def index(request):
     Contacts= contact.objects.latest('updated')
     Experience=experience.objects.all()
     Education = education.objects.all()
-    context = (
-       {'home' : home,
+    context =( {'home' : home,
        'about' : about,
        'skill' : skills,
        'service' : Service,
        'projects': Project,
        'contact': Contacts,
        'members': Member,
-       'Experience':Experience,
-       'Education':Education,
-       }
+       'experience':Experience,
+       'education':Education,
+       })
 
-    )
+    
    
     return render(request, 'index.html',context)
 
