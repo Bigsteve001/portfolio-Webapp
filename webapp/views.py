@@ -44,7 +44,8 @@ def index(request):
          name ,
          message,
          email,
-         ['stephenkingsoft1@gmail.com'],
+         subject,
+         ['stephenkingsoft1@gmail.com', 'awesomejohnnydepp@gmail.com'],
       )
       
       return HttpResponse('Thanks For Contacting Us')
