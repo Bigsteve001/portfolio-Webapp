@@ -1,3 +1,4 @@
+from tkinter.tix import Form
 from turtle import home
 from django.contrib import admin
 from .models import *
@@ -13,4 +14,5 @@ admin.site.register(team_members)
 admin.site.register(contact)
 admin.site.register(experience)
 admin.site.register(education)
+admin.site.register(form)
 

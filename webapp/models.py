@@ -108,6 +108,14 @@ class education(models.Model):
       return  self.course 
 
 
+class form(models.Model):
+    name=models.CharField(max_length=100, null=True)
+    email=models.EmailField(null=True)
+    subject=models.TextField(max_length=100, null=True)
+    message=models.TextField(max_length=500, null=True)
+    def __int__(self):
+      return self.name
+
 
 
 
